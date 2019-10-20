@@ -27,7 +27,9 @@
   (osx-trash-setup)
 
   (require-package 'reveal-in-osx-finder)
-  (require-package 'vkill))
+  ;; (require-package 'vkill)
+  (setq mac-right-option-modifier nil)
+  )
 
 (defun /os/reveal-in-os ()
   (interactive)

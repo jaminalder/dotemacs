@@ -1,5 +1,8 @@
 (eval-when-compile (require 'cl))
 
+(require 'gnutls)
+(add-to-list 'gnutls-trustfiles "/usr/local/etc/openssl/cert.pem")
+
 (lexical-let ((emacs-start-time (current-time)))
   (add-hook 'emacs-startup-hook
             (lambda ()

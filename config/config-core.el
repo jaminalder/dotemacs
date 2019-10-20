@@ -210,6 +210,9 @@
 (delete-selection-mode t)
 (random t) ;; seed
 
+(setq-default display-line-numbers-type 'relative
+              display-line-numbers 'relative
+              display-line-numbers-current-absolute t)
 
 (defun /core/find-file-hook ()
   (when (or (string-match "\\.min\\." (buffer-file-name))

@@ -120,8 +120,8 @@
       "l" #'vc-annotate-show-log-revision-at-line))
 
   (after "avy-autoloads"
-    (define-key evil-operator-state-map (kbd "z") 'avy-goto-char-2)
-    (define-key evil-normal-state-map (kbd "s") 'avy-goto-char-2)
+    (define-key evil-operator-state-map (kbd "z") 'avy-goto-char-timer)
+    (define-key evil-normal-state-map (kbd "s") 'avy-goto-char-timer)
     (define-key evil-motion-state-map (kbd "S-SPC") 'avy-goto-line))
 
   (add-hook 'eshell-mode-hook
