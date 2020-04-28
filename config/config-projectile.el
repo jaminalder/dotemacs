@@ -18,7 +18,7 @@
  ((executable-find "rg")
   (setq projectile-generic-command
         (concat "rg -0 --hidden --files --color never "
-                (mapconcat (lambda (dir) (concat "--glob " "'!" dir "'")) projectile-globally-ignored-directories " "))))
+                (mapconcat (lambda (dir) (concat "--glob " "'!" dir "'")) projectile-globally-ignored-directories " ") " || :")))
  ((executable-find "ag")
   (setq projectile-generic-command
         (concat "ag -0 -l --hidden --nocolor "
@@ -27,5 +27,7 @@
   (setq projectile-generic-command
         (concat "ack -f --print0"
                 (mapconcat (lambda (dir) (concat "--ignore-dir=" dir)) projectile-globally-ignored-directories " ")))))
+
+(setq projectile-git-submodule-command "git submodule --quiet foreach \"echo $sm_path\" | tr '\\n' '\\0'")
 
 (provide 'config-projectile)

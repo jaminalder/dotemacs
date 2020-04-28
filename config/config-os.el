@@ -6,9 +6,12 @@
 
 (if (eq system-type 'windows-nt)
     (dolist (path (split-string (getenv "PATH") ";"))
-      (add-to-list 'exec-path (replace-regexp-in-string "\\\\" "/" path)))
+      (add-to-list 'exec-path (replace-regexp-in-string "\\\\" "/" path))
+      (setq find-program "C:\\cygwin64\\bin\\find.exe")
+      (setq grep-program "C:\\cygwin64\\bin\\grep.exe"))
   (require-package 'exec-path-from-shell)
-  (exec-path-from-shell-initialize))
+  (exec-path-from-shell-initialize)
+  )
 
 (defun /os/addpath (path)
   (let* ((directory (expand-file-name path))

@@ -6,7 +6,7 @@
 (after 'web-mode
   (flycheck-add-mode 'javascript-eslint 'web-mode))
 
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
 (when (display-graphic-p)
   (require-package 'flycheck-pos-tip)
@@ -27,5 +27,7 @@
       (apply orig-func args))))
 
 (advice-add #'next-error-find-buffer :around #'/flycheck/advice/next-error-find-buffer)
+
+(global-flycheck-mode -1)
 
 (provide 'config-flycheck)
