@@ -47,12 +47,14 @@
     ("C-f" #'evil-scroll-down))
 
   (/bindings/define-keys evil-normal-state-map
-    ("[ SPC" (bind (evil-insert-newline-above) (forward-line)))
-    ("] SPC" (bind (evil-insert-newline-below) (forward-line -1)))
+    ("è" (bind (evil-insert-newline-above) (forward-line)))
+    ("ü" (bind (evil-insert-newline-below) (forward-line -1)))
     ("[ e" "ddkP")
     ("] e" "ddp")
-    ("[ b" 'previous-buffer)
-    ("] b" 'next-buffer)
+    ("H" "^")
+    ("L" "$")
+    ("ö" 'previous-buffer)
+    ("ä" 'next-buffer)
     ("[ q" 'previous-error)
     ("] q" 'next-error))
 
